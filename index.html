@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Govind ✨ — A Celebration Made With Love</title>
+  <meta name="description" content="A magical, personalized birthday celebration website crafted with love for Govind — candles, memories, a secret letter, a balloon game, and infinite wishes!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient orbs (CSS-animated) -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Canvas layers -->
+  <canvas id="confetti-canvas"></canvas>
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- ─────────────────────────────────────────────────
+       INTRO OVERLAY — Surprise Gift Unboxing
+       ───────────────────────────────────────────────── -->
+  <div id="intro-overlay" class="intro-overlay">
+    <div class="intro-card">
+      <div class="intro-eyebrow">✨ A Special Birthday Surprise ✨</div>
+
+      <div id="gift-box" class="gift-box" title="Tap to unwrap your surprise!" onclick="openSurprise()">
+        <div class="gift-lid"></div>
+        <div class="gift-body"></div>
+      </div>
+
+      <h1 class="intro-title">Something special was made just for you, Govind</h1>
+      <p class="intro-sub">A little world of love, laughter, and magical memories — crafted only for you. Tap the gift to step inside.</p>
+
+      <button id="open-btn" class="intro-btn" onclick="openSurprise()">
+        🎁 &nbsp;Open Your Surprise
+      </button>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────────────
+       NAVIGATION
+       ───────────────────────────────────────────────── -->
+  <header class="navbar">
+    <nav class="nav-inner">
+      <a href="#hero" class="nav-brand">
+        Govind's Day &nbsp;<span class="nav-heart">💖</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Celebration</a></li>
+        <li><a href="#cake">Make a Wish</a></li>
+        <li><a href="#memories">Memories</a></li>
+        <li><a href="#capsule">Why You're Magic</a></li>
+        <li><a href="#letter">Letter</a></li>
+        <li><a href="#game">Pop Game</a></li>
+        <li><a href="#wishes">Wishes Wall</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="music-btn" class="nav-btn" title="Toggle birthday music">
+          <span class="bars"><span></span><span></span><span></span></span>
+          Music
+        </button>
+        <button id="party-btn" class="nav-btn" title="Toggle party mode">
+          🎉 Party
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ─────────────────────────────────────────────────
+         HERO
+         ───────────────────────────────────────────────── -->
+    <section id="hero" class="hero">
+      <div class="hero-eyebrow">🎂 Today is Your Day</div>
+
+      <h1 class="hero-name">Happy Birthday,<br/>Govind!</h1>
+      <p class="hero-sub-title">A year more brilliant, radiant &amp; beautifully you.</p>
+
+      <div class="hero-typewriter">
+        <span id="typewriter"></span><span class="cursor"></span>
+      </div>
+
+      <div class="hero-traits">
+        <div class="trait-chip">🌸 Vibe Royalty</div>
+        <div class="trait-chip">🍓 Strawberry Queen</div>
+        <div class="trait-chip">📸 Pout &amp; Pose Legend</div>
+        <div class="trait-chip">🎶 Mast Magan on Repeat</div>
+        <div class="trait-chip">🌟 Golden-Hearted Soul</div>
+        <div class="trait-chip">💖 Born to Shine</div>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#cake" class="btn-primary">🎂 Blow the Candles</a>
+        <a href="#memories" class="btn-ghost">📸 Memory Lane</a>
+        <a href="#letter" class="btn-ghost">💌 Secret Letter</a>
+      </div>
+
+      <div class="hero-frame">
+        <div class="hero-frame-inner">
+          <img src="assets/images/banner.jpg" alt="Birthday celebration banner" class="hero-frame-img" />
+          <div class="hero-frame-overlay">
+            <span class="hero-frame-label">🎉 Govind's Celebration Day</span>
+            <h2 class="hero-frame-title">To a year overflowing with joy, magic &amp; dreams fulfilled ✨</h2>
+            <p class="hero-frame-sub">Every moment of this day is yours to treasure forever.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         CAKE CEREMONY
+         ───────────────────────────────────────────────── -->
+    <section id="cake" class="section">
+      <div class="section-head">
+        <span class="section-eyebrow">Make A Special Wish</span>
+        <h2 class="section-title">The Birthday Cake Ceremony 🎂</h2>
+        <p class="section-desc">Close your eyes, hold your dearest wish in your heart, and blow out the glowing candles!</p>
+      </div>
+
+      <div class="glass-card cake-card">
+        <div id="cake-visual" class="cake-visual">
+          <div class="cake-frame">
+            <img src="assets/images/cake.jpg" alt="Gourmet strawberry red velvet birthday cake" />
+
+            <div class="candles" title="Click to blow the candles!">
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+            </div>
+
+            <div class="smoke">💨 ✨</div>
+          </div>
+        </div>
+
+        <div class="cake-info">
+          <div id="cake-status" class="status-chip">🕯️ Candles Glowing — Ready to Wish</div>
+          <h3 class="cake-title">Gourmet Strawberry Red Velvet 🍓</h3>
+          <p class="cake-body">
+            Layered with love, cream, and fresh strawberries — just the way every birthday deserves. Click on the glowing flames or tap the button below to blow them out and make your special wish!
+          </p>
+
+          <div class="cake-btns">
+            <button id="blow-btn" class="btn-candle">💨 Blow Out Candles</button>
+            <button id="relight-btn" class="btn-relight">🔥 Relight Candles</button>
+          </div>
+
+          <div id="wish-reveal" class="wish-box">
+            <div class="wish-label">🌟 A Birthday Blessing, Revealed:</div>
+            <p class="wish-text">
+              "May the universe conspire to gift you every ounce of love, success, and pure joy that you so deeply deserve. This is your year!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         MEMORIES
+         ───────────────────────────────────────────────── -->
+    <section id="memories" class="section">
+      <div class="section-head">
+        <span class="section-eyebrow">Cherished Snapshots</span>
+        <h2 class="section-title">Govind's Memory Lane 📸</h2>
+        <p class="section-desc">Glimpses of pure joy, aesthetic vibes &amp; unmatchable moments — and you can add your own photos too!</p>
+      </div>
+
+      <div id="polaroid-grid" class="polaroid-grid">
+        <!-- Card 1 -->
+        <div class="polaroid">
+          <div class="tape"></div>
+          <div class="polaroid-img">
+            <img src="assets/images/moment1.jpg" alt="Park picnic day" />
+          </div>
+          <div class="polaroid-caption">
+            <span class="polaroid-tag">Sunny Park Day</span>
+            <p class="polaroid-note">"Strawberries, pouts &amp; the sweetest afternoon ever 🍓🌿"</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="polaroid">
+          <div class="tape"></div>
+          <div class="polaroid-img">
+            <img src="assets/images/cake.jpg" alt="Birthday celebration cake" />
+          </div>
+          <div class="polaroid-caption">
+            <span class="polaroid-tag">Birthday Feast</span>
+            <p class="polaroid-note">"Another year sweeter, bolder &amp; more iconic than ever! 🍰✨"</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="polaroid">
+          <div class="tape"></div>
+          <div class="polaroid-img">
+            <img src="assets/images/banner.jpg" alt="Celebration lights" />
+          </div>
+          <div class="polaroid-caption">
+            <span class="polaroid-tag">Magical Celebration</span>
+            <p class="polaroid-note">"Effortless grace, warm lights &amp; the most beautiful smile 💕"</p>
+          </div>
+        </div>
+
+        <!-- Upload Card -->
+        <div id="upload-card" class="upload-zone" title="Click to add your own photos!">
+          <div class="upload-icon">📸</div>
+          <h3 class="upload-title">Add Your Own Memories</h3>
+          <p class="upload-hint">Select any photo to display on Govind's board!</p>
+          <input type="file" id="photo-input" style="display:none;" accept="image/*" />
+          <div class="upload-cta">+ Choose Photo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         COMPLIMENT CAPSULE
+         ───────────────────────────────────────────────── -->
+    <section id="capsule" class="section">
+      <div class="section-head">
+        <span class="section-eyebrow">Infinite Reasons</span>
+        <h2 class="section-title">Why Govind Is Pure Magic 💖</h2>
+        <p class="section-desc">Tap the button to unlock heartwarming, real, and beautiful reasons why you are so incredibly loved.</p>
+      </div>
+
+      <div class="glass-card" style="padding:48px 36px;">
+        <div class="capsule-wrap">
+          <div class="capsule-icon">💊✨</div>
+
+          <div class="capsule-display">
+            <span id="capsule-num" class="capsule-counter">REASON #1 OF 10</span>
+            <p id="capsule-text" class="capsule-quote">
+              "Your laughter is genuinely contagious — you light up every room you step into! ☀️"
+            </p>
+          </div>
+
+          <button id="capsule-btn" class="btn-capsule">✨ Unlock Next Reason</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         BALLOON POP GAME
+         ───────────────────────────────────────────────── -->
+    <section id="game" class="section">
+      <div class="section-head">
+        <span class="section-eyebrow">Arcade Fun</span>
+        <h2 class="section-title">Birthday Balloon Pop Rush 🎈🎯</h2>
+        <p class="section-desc">Pop the rising balloons before they escape! Each pop earns celebration points &amp; a sweet compliment.</p>
+      </div>
+
+      <div class="game-card">
+        <div class="score-row">
+          <div class="score-pill">Pop Score: <em id="score">0</em> pts</div>
+          <div class="score-pill">Target: <em>∞ Smiles</em></div>
+        </div>
+
+        <div id="arena" class="arena">
+          <div id="arena-overlay" class="arena-overlay">
+            <h3>Ready to celebrate? 🎈</h3>
+            <p>Release the birthday balloons and start popping!</p>
+            <button id="start-btn" class="btn-start">🎈 Launch Balloons</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         HEARTFELT LETTER
+         ───────────────────────────────────────────────── -->
+    <section id="letter" class="section">
+      <div class="section-head">
+        <span class="section-eyebrow">From The Heart</span>
+        <h2 class="section-title">A Letter for Govind 💌</h2>
+        <p class="section-desc">Words written with love that will stay with you forever. You can even personalize it!</p>
+      </div>
+
+      <div class="letter-outer">
+        <div class="letter-paper">
+          <div class="letter-seal">💖</div>
+          <div class="letter-stamp">SPECIAL<br/>AIR MAIL<br/>★ 100% ★</div>
+
+          <h3 class="letter-salute">Dear Govind,</h3>
+
+          <div id="letter-body" class="letter-body">
+            Happiest Birthday to one of the most incredible human beings on this planet! 🎂<br/><br/>
+            Having you in my life has made every day brighter, warmer, and so much more meaningful. Whether it's those spontaneous park afternoons, the endless laughter, the casual photos that somehow turn out stunning, or the quiet moments with good music playing — every single memory with you is a treasure I hold close.<br/><br/>
+            Never stop being your radiant, funny, real, and beautifully bold self. May this year bring you everything your heart whispers for — big wins, peaceful days, deep joy, and love from every direction. You deserve it all and so much more.
+          </div>
+
+          <div class="letter-sig">Forever in your corner — always 💕✨</div>
+
+          <div class="letter-footer">
+            <span class="letter-hint">✏️ You can personalize this letter anytime</span>
+            <button id="edit-btn" class="btn-edit">✏️ Edit Letter</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         WISHES WALL
+         ───────────────────────────────────────────────── -->
+    <section id="wishes" class="section">
+      <div class="section-head">
+        <span class="section-eyebrow">Birthday Guestbook</span>
+        <h2 class="section-title">The Wishes Wall 📝🎉</h2>
+        <p class="section-desc">Leave a heartfelt birthday message and pin it to Govind's celebration wall forever!</p>
+      </div>
+
+      <div class="wishes-layout">
+        <!-- Form card -->
+        <div class="glass-card wishes-form-card">
+          <form id="wish-form">
+            <div class="form-group">
+              <label class="form-label" for="wish-name">Your Name</label>
+              <input type="text" id="wish-name" class="form-input" placeholder="e.g. Your name or nickname…" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Pick a Sticker</label>
+              <div class="emoji-row">
+                <button type="button" class="emoji-chip active">💖</button>
+                <button type="button" class="emoji-chip">🎂</button>
+                <button type="button" class="emoji-chip">🍓</button>
+                <button type="button" class="emoji-chip">👑</button>
+                <button type="button" class="emoji-chip">🎉</button>
+                <button type="button" class="emoji-chip">✨</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="wish-msg">Your Birthday Message</label>
+              <textarea id="wish-msg" rows="4" class="form-textarea" placeholder="Write your heartfelt wish for Govind…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-post">💌 Pin to Wishes Wall</button>
+          </form>
+        </div>
+
+        <!-- Wishes stream -->
+        <div id="wishes-stream" class="wishes-stream">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─────────────────────────────────────────────────
+       FOOTER
+       ───────────────────────────────────────────────── -->
+  <footer class="footer">
+    <h2 class="footer-quote">"Here's to making this your most magical year yet!" ✨</h2>
+    <p class="footer-sub">Made with endless love &amp; sparkles — just for Govind 🎂🎈</p>
+    <button id="fireworks-btn" class="btn-fireworks">🎆 Grand Fireworks Finale</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
