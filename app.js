@@ -387,7 +387,7 @@ function loadPhotos() {
 const seedWishes = [
   { name:'A Close Friend',   emoji:'💖', text:'Wishing you the most magical birthday ever! May every dream of yours bloom into reality this year. Love you so much! 🌸' },
   { name:'Your Person',      emoji:'✨', text:'Happy birthday to the most genuine, hilarious, and warmhearted soul I know. This day deserves to be as beautiful as you are! 🎂' },
-  { name:'Someone Special',  emoji:'🎉', text:'Here's to you — to park outings, great music, the funniest photos and the sweetest memories yet to come! 🍓' },
+  { name:'Someone Special',  emoji:'🎉', text:"Here's to you — to park outings, great music, the funniest photos and the sweetest memories yet to come! 🍓" },
 ];
 
 function loadWishes() {
@@ -476,27 +476,31 @@ function toggleParty() {
 }
 
 /* ── 12. INTRO REVEAL ──────────────────────────────── */
-function openSurprise() {
-  // ① Hide overlay IMMEDIATELY — guaranteed, nothing can block this
-  const overlay = document.getElementById('intro-overlay');
-  if (overlay) {
-    overlay.style.opacity    = '0';
-    overlay.style.visibility = 'hidden';
-    overlay.style.pointerEvents = 'none';
-    overlay.classList.add('hidden');
-  }
-
-  // ② Visual effects — each wrapped so one failure can't stop the next
+window._openSurpriseFull = function() {
   setTimeout(() => {
     try { if (confetti)  confetti.burst(window.innerWidth/2, window.innerHeight/2, 180); } catch(e) {}
     try { if (fireworks) fireworks.random(); }                                              catch(e) {}
     setTimeout(() => { try { if (fireworks) fireworks.random(); } catch(e) {} }, 420);
   }, 50);
 
-  // ③ Audio — delayed so AudioContext is triggered well after user gesture
   setTimeout(() => { try { audio.fanfare();      } catch(e) {} }, 200);
   setTimeout(() => { try { audio.startMelody();  } catch(e) {} }, 1000);
+};
+
+function openSurprise() {
+  const overlay = document.getElementById('intro-overlay');
+  if (overlay) {
+    overlay.style.opacity    = '0';
+    overlay.style.visibility = 'hidden';
+    overlay.style.pointerEvents = 'none';
+    overlay.classList.add('hidden');
+    setTimeout(() => { overlay.style.display = 'none'; }, 400);
+  }
+  if (window._openSurpriseFull) {
+    window._openSurpriseFull();
+  }
 }
+window.openSurprise = openSurprise;
 
 /* ── BOOT ──────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
